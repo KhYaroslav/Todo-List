@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Press+Start+2P&display=swap");
+
+:root {
+  --primary: #3fefef;
+}
+
+.h1Load {
+  font-family: "Indie Flower", cursive;
+  text-align: center;
+  color: var(--primary);
+  font-size: 2.5em;
+  margin-top: 20px;
+  animation: blink 1s infinite ease;
+}
+.progressing {
+  width: 240px;
+  height: 44px;
+  border-radius: 20px;
+  color: var(--primary);
+  border: 4px solid currentColor;
+  position: relative;
+}
+.progressing::before {
+  content: "";
+  position: absolute;
+  margin: 4px;
+  background: currentColor;
+  inset: 0 100% 0 0;
+  border-radius: inherit;
+  animation: progressing 2s infinite;
+  filter: drop-shadow(0 0 20px var(--primary));
+}
+
+/* Add Animation */
+
+@keyframes progressing {
+  100% {
+    inset: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
